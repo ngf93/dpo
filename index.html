@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный центр "ПрофРост"</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.min.css"/>
+</head>
+<body>
+    <header class="container d-flex justify-content-between align-items-stretch flex-wrap flex-lg-nowrap">
+        <div class="d-flex align-items-center order-1 mb-2 mb-lg-0">
+            <a href="index.html">
+                <img src="imgs/logo-lg.jpg" alt="ПрофРост" class="logo">
+            </a>
+            <div class="ms-2">
+                <h5>Учебный центр "ПрофРост"</h5>
+                <h6>Учёба — Профессия — Успех!</h6>
+            </div>
+        </div>
+
+        <ul class="order-2">
+            <li>
+                <img src="imgs/icons/map.svg" alt="map">
+                <address>Воронеж, Лидии Рябцевой 54</address>
+            </li>
+            <li>
+                <img src="imgs/icons/message.svg" alt="message">
+                <a href="mailto:office@dpo36.ru">office@dpo36.ru</a>
+            </li>
+        </ul>
+
+        <ul class="order-3 order-md-4 order-lg-3">
+            <li>
+                <img src="imgs/icons/phone.svg" alt="phone">
+                <a href="tel:+79911122111">+7 (991) 112-21-11</a>
+            </li>
+            <li>
+                <img src="imgs/icons/phone.svg" alt="phone">
+                <a href="tel:+74732627969">+7 (473) 262-79-69</a>
+            </li>
+        </ul>
+
+        <div class="d-flex order-4 order-md-3 order-lg-4">
+            <button type="button" class="btn-1 fs-18">Войти в систему</button>
+            <button onclick="openModal('menuModal')" class="ms-4 btn-3 d-md-none" type="button">
+                <img src="imgs/icons/menu.svg" alt="menu">
+            </button>
+        </div>
+
+    </header>
+    
+    <nav>
+        <ul class="container">
+            <li>
+                <a href="">Направления</a>
+            </li>
+            <li>
+                <a href="">Гарантии</a>
+            </li>
+            <li>
+                <a href="">Обучение</a>
+            </li>
+            <li>
+                <a href="">Лицензия</a>
+            </li>
+            <li>
+                <a href="">Вопросы</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="sec-main mb-indent">
+            <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+                <h1>Не забивай голову!</h1>
+                <h3>Запишись на наши курсы и открой для себя
+                    новые возможности в профессии.
+                    Начни обучение уже сегодня!</h3>
+                <button type="button" class="btn-2 fs-18">Получить консультацию</button>
+            </div>
+        </section>
+
+        <section class="container mb-indent">
+            <h2>Наши направления в обучении</h2>
+            <p class="fs-18 mb-5">Наши курсы дают преимущества, потому что готовят к востребованным и повсеместным профессиям. Все курсы разделены по разделам, чтобы вы могли легко выбрать подходящее направление обучения.</p>
+            <div class="row row-cols-sm-2 row-cols-lg-3 g-4">
+                <div>
+                    <div class="card-plus">
+                        <img src="imgs/img1.jpg" alt="Безопасность" class="card-plus-bg">
+                        <div class="card-plus-cap">
+                            <h4>Безопасность</h4>
+                            <img src="imgs/icons/arrowDown.svg" alt="arrowDown" class="icon">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-plus">
+                        <img src="imgs/img2.jpg" alt="Охрана труда" class="card-plus-bg">
+                        <div class="card-plus-cap">
+                            <h4>Охрана труда</h4>
+                            <img src="imgs/icons/arrowDown.svg" alt="arrowDown" class="icon">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-plus">
+                        <img src="imgs/img3.jpg" alt="Рабочие профессии" class="card-plus-bg">
+                        <div class="card-plus-cap">
+                            <h4>Рабочие профессии</h4>
+                            <img src="imgs/icons/arrowDown.svg" alt="arrowDown" class="icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-guarantees mb-indent">
+            <div class="container">
+                <div class="sec-guarantees-text">
+                    <h2>Гарантии с нашей стороны</h2>
+                    <p class="fs-18">Мы, как компания, предлагающая дополнительное профессиональное обучение, предоставляем нашим клиентам полные гарантии качества обучения и достижения поставленных целей.</p>
+                </div>
+                <div class="row g-4 row-cols-sm-2 row-cols-lg-4">
+                    <div>
+                        <div class="card-guarantee">
+                            <img src="imgs/icons/wallet.svg" alt="Доступные цены">
+                            <h5>Доступные цены</h5>
+                            <hr>
+                            <p>Одни из самых доступных цен в городе – мы предлагаем высококачественное обучение по лучшей стоимости</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-guarantee">
+                            <img src="imgs/icons/desktop.svg" alt="Дистанционное обучение">
+                            <h5>Дистанционное обучение</h5>
+                            <hr>
+                            <p>Вы сможете повышать квалификацию без перерыва в работе и производственной деятельности</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-guarantee">
+                            <img src="imgs/icons/doc.svg" alt="Документы гос. образца">
+                            <h5>Документы гос. образца</h5>
+                            <hr>
+                            <p>Наши сертификаты об окончании обучения соответствуют всем требованиям государственных стандартов.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-guarantee">
+                            <img src="imgs/icons/arhive.svg" alt="Все законно">
+                            <h5>Все законно</h5>
+                            <hr>
+                            <p>Наш учебный центр обладает всеми необходимыми лицензиями и аккредитациями, мы работаем по договору</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-how mb-indent">
+            <div class="container">
+                <h2>Как мы работаем?</h2>
+                <ol class="steps">
+                    <li class="order-1">
+                        <p>Наши курсы для повышения квалификации специалистов в различных профессиях. Вы можете обучиться у нас, даже без опыта.</p>
+                    </li>
+                    <li class="order-2">
+                        <p>Чтобы начать у нас обучение выбранной профессии, просто подайте к нам заявку. Вы почти сразу сможете изучать курс.</p>
+                    </li>
+                    <li class="order-3">
+                        <p>Принесите к нам ваш паспорт и фотографию. Либо вы можете подгрузить эти документы прямо к нам на сайт.</p>
+                    </li>
+                    <li class="order-4 order-md-6">
+                        <p>В процессе обучения, при возникновении вопросов, вы всегда можете получить консультацию специалистов.</p>
+                    </li>
+                    <li class="order-5">
+                        <p>Обучение начинается в онлайн-режиме. Такой вид обучения позволит учиться без отрыва от работы или производства.</p>
+                    </li>
+                    <li class="order-6 order-md-4">
+                        <p>Мы подписываем с вами договор, который обеспечивает гарантии качества нашего обучения.</p>
+                    </li>
+                    <li class="order-7">
+                        <p>После завершения программы курса вы пройдете аттестацию, которая подтвердит ваши знания и навыки.</p>
+                    </li>
+                    <li class="order-8">
+                        <p>По итогам аттестации вы получите удостоверение, протокол о заседании комиссии или свидетельство государственного образца</p>
+                    </li>
+                    <li class="order-9">
+                        <p>Некоторые документы выдаются на определенный срок и требуют периодического продления или подтверждения</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="sec-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="imgs/logo-xl.jpg" alt="ПрофРост" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p>Наш учебный центр всегда стремится идти в ногу со временем, предлагая разнообразные удобные способы оплаты обучения. Мы понимаем, что каждый человек предпочитает удобный для себя способ оплаты, поэтому предоставляем возможность оплаты как наличными, так и безналичными средствами. Это включает банковские переводы, кредитные карты и электронные платежи.</p>
+                        <p>После успешной оплаты каждому клиенту предоставляются все необходимые отчетные документы. Мы ценим прозрачность во всех аспектах наших отношений с клиентами и гарантируем полное соблюдение финансовой дисциплины. Наши клиенты могут быть уверены, что получат четкие и понятные документы, подтверждающие их финансовые транзакции и расходы на обучение.</p>
+                        <p>Мы также стараемся обеспечить высокий уровень удобства и обслуживания наших клиентов, поэтому всегда открыты для обратной связи и готовы рассмотреть индивидуальные запросы по вопросам оплаты и финансовой отчетности.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-callback">
+            <div class="container">
+                <h2>Наши лицензии</h2>
+                <p class="fs-18 mb-5">Учебный центр «ПрофРост» аккредитован и обладает всеми необходимыми документами для предоставления образовательных услуг. У нас доступен полный перечень лицензий и разрешений, подтверждающих высокий профессиональный стандарт и надежность нашей работы.</p>
+                <div class="row row-cols-sm-2 row-cols-lg-3 g-4 mb-indent">
+                    <div>
+                        <img src="imgs/license1.jpg" alt="license" class="img-fluid">
+                    </div>
+                    <div>
+                        <img src="imgs/license2.jpg" alt="license" class="img-fluid">
+                    </div>
+                    <div>
+                        <img src="imgs/license3.jpg" alt="license" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="row row-cols-lg-2">
+                    <div>
+                        <h2>Остались вопросы?</h2>
+                        <p class="fs-18 mb-indent-sm">У нас в «ПрофРост» мы всегда готовы ответить на ваши вопросы и предоставить необходимую консультацию. Наши специалисты обладают высоким профессиональным уровнем и большим опытом в своей области, что позволяет нам оперативно помогать нашим клиентам.</p>
+                        <p class="fs-18 mb-indent-sm">Если у вас возникли вопросы по образовательным программам, требованиям к документации или методикам обучения, не стесняйтесь обращаться к нам. Мы ценим ваше время и готовы предоставить четкие и полезные ответы, помогая вам сделать осознанный выбор в пользу нашего учебного центра.</p>
+                        <p class="fs-18">Наша цель - обеспечить вас всей необходимой информацией и поддержкой на каждом этапе вашего образовательного пути. Свяжитесь с нами сегодня, и наши эксперты помогут вам достичь успеха в вашем профессиональном развитии.</p>
+                    </div>
+                    <div class="mt-5 mt-lg-0">
+                        <div class="callback-top d-flex mb-4">
+                            <img src="imgs/logo-framed.png" alt="ПрофРост">
+                            <div>
+                                <h5>ПрофРост</h5>
+                                <p>Воронеж, улица Лидии Рябцевой, 54</p>
+                            </div>
+                        </div>
+                        <h3>Заявка</h3>
+                        <form action="" class="fs-18">
+                            <div class="row gy-3 gx-4">
+                                <div class="col-12">
+                                    <input type="text" placeholder="Как вас зовут*">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="tel" placeholder="Телефон*">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="mail" placeholder="Эл. почта">
+                                </div>
+                                <div class="col-12">
+                                    <textarea placeholder="Коментарий"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" disabled class="btn-1 w-100 mb-3">Получить консультацию</button>
+                                    <p class="info">Нажимая «Получить консультацию», вы соглашаетесь на обработку указанных данных ООО «ЯНДЕКС» <a class="link" href="">Политики конфиденциальности</a> на условиях и организацией, оказывающей услуги, для целей бронирования услуг.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="company">
+                <img src="imgs/logo-framed.png" alt="ПрофРост">
+                <div>
+                    <h5 class="mb-3">Учебный центр <br/>"ПрофРост"</h5>
+                    <p>Учёба — Профессия — Успех!</p>
+                </div>
+            </div>
+            <div class="menu">
+                <h5 class="d-none d-sm-block">Навигация</h5>
+                <h5 class="d-sm-none"><button onclick="openModal('menuModal')">Навигация</button></h5>
+                <ul class="d-none d-sm-block">
+                    <li><a href="">Главная</a></li>
+                    <li><a href="">Направления</a></li>
+                    <li><a href="">Гарантии</a></li>
+                    <li><a href="">Обучение</a></li>
+                    <li><a href="">Лицензия</a></li>
+                    <li><a href="">Вопросы</a></li>
+                </ul>
+            </div>
+            <div class="progs">
+                <h5 class="d-none d-sm-block">Учебные программы</h5>
+                <h5 class="d-sm-none"><button onclick="openModal('progModal')">Учебные программы</button></h5>
+                <ul class="d-none d-sm-block">
+                    <li><a href="">Программа профессионального обучения по профессии рабочего «Стропальщик»</a></li>
+                    <li><a href="">Программа дополнительного профессионального образования «Пожарная безопасность»</a></li>
+                    <li><a href="">Программа А</a></li>
+                    <li><a href="">Программа Б</a></li>
+                    <li><a href="">Программа В</a></li>
+                    <li><a href="">Программа В1-В24</a></li>
+                    <li><a href="">Программа ОПП</a></li>
+                </ul>
+            </div>
+            <div class="contacts">
+                <h5>Контакты</h5>
+                <ul>
+                    <li>
+                        <a href="mailto:office@dpo36.ru">office@dpo36.ru</a>
+                    </li>
+                    <li>
+                        <a href="tel:+74732627969">+7 (473) 262-79-69</a>
+                    </li>
+                    <li>
+                        <a href="tel:+79911122111">+7 (991) 112-21-11</a>
+                    </li>
+                    <li>
+                        <address>г. Воронеж, ул. Лидии Рябцевой 54, 2 этаж, 203 кабинет</address>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" class="btn-up">
+        <img src="imgs/icons/arrowUp.svg" alt="arrowUp">
+    </button>
+
+    <section id="menuModal" class="modal">
+        <div class="container">
+            <button type="button" class="modal-close" onclick="closeModal(this)">
+                <img src="imgs/icons/close.svg" alt="close">
+            </button>
+            <div class="company mb-5">
+                <img src="imgs/logo-framed.png" alt="ПрофРост">
+                <div>
+                    <h5 class="mb-3">Учебный центр "ПрофРост"</h5>
+                    <p>Учёба — Профессия — Успех!</p>
+                </div>
+            </div>
+            <div class="px-5">
+                <h4 class="mb-4">Навигация</h4>
+                <ul>
+                    <li><a href="">Главная</a></li>
+                    <li><a href="">Направления</a></li>
+                    <li><a href="">Гарантии</a></li>
+                    <li><a href="">Обучение</a></li>
+                    <li><a href="">Лицензия</a></li>
+                    <li><a href="">Вопросы</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="progModal" class="modal">
+        <div class="container">
+            <button type="button" class="modal-close" onclick="closeModal(this)">
+                <img src="imgs/icons/close.svg" alt="close">
+            </button>
+            <div class="company mb-5">
+                <img src="imgs/logo-framed.png" alt="ПрофРост">
+                <div>
+                    <h5 class="mb-3">Учебный центр "ПрофРост"</h5>
+                    <p>Учёба — Профессия — Успех!</p>
+                </div>
+            </div>
+            <div class="px-4">
+                <h4 class="mb-4">Учебные программы</h4>
+                <ul>
+                    <li><a href="">Программа профессионального обучения по профессии рабочего «Стропальщик»</a></li>
+                    <li><a href="">Программа дополнительного профессионального образования «Пожарная безопасность»</a></li>
+                    <li><a href="">Программа А</a></li>
+                    <li><a href="">Программа Б</a></li>
+                    <li><a href="">Программа В</a></li>
+                    <li><a href="">Программа В1-В24</a></li>
+                    <li><a href="">Программа ОПП</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
