@@ -4,6 +4,7 @@
   --h-nav: 60px;
   --h-footer: 100px;
   --main-color: #323555;
+  --main-color-rgb: 50 53 85;
   --font-color: #81899A;
   --radius: 8px;
   --indent: 70px;
@@ -97,12 +98,19 @@ h3 {
 h4 {
   text-align: left;
   font-size: 32px;
+  font-weight: 700;
 }
 
 h5 {
   font-size: 20px;
   text-align: center;
   font-weight: 400;
+}
+
+h6 {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
 }
 
 .fs-18 {
@@ -473,23 +481,52 @@ main {
 .card-plus-cap {
   position: relative;
   z-index: 10;
-  background: linear-gradient(-45deg, var(--main-color), transparent);
+  background-color: rgba(var(--main-color-rgb)/50%);
   background-size: cover;
-  height: 370px;
+  height: 270px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: nowrap;
-  padding: 15px;
+  padding: 25px 15px;
+  transition: background-color 250ms ease-in;
 }
 .card-plus-cap h4 {
   color: #fff;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
 }
-.card-plus-cap .icon {
+.card-plus-cap .link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.card-plus-cap .link-icon {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+  transition: transform 250ms ease-in;
+}
+.card-plus-cap .link-text {
+  color: #fff;
+  margin-left: 1em;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.card-plus-cap:hover {
+  background-color: rgba(var(--main-color-rgb)/90%);
+}
+.card-plus-cap:hover .link-icon {
+  transform: rotate(-45deg);
+}
+.card-plus-cap:hover .link-text {
+  opacity: 1;
 }
 @media (max-width: 1199px) {
   .card-plus-cap {
@@ -711,7 +748,39 @@ main {
 
 .block-collapsible {
   background-color: #fff;
+  border: 1px solid #fff;
   border-radius: var(--radius);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
+  transform: translateZ(0);
+}
+.block-collapsible_cover {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1199px) {
+  .block-collapsible_cover {
+    height: 160px;
+  }
+}
+@media (max-width: 991px) {
+  .block-collapsible_cover {
+    height: 130px;
+  }
+}
+@media (max-width: 767px) {
+  .block-collapsible_cover {
+    height: 100px;
+  }
+}
+@media (max-width: 575px) {
+  .block-collapsible_cover {
+    height: 18vw;
+  }
 }
 .block-collapsible_top {
   display: flex;
@@ -721,13 +790,13 @@ main {
   flex-wrap: nowrap;
   padding: 25px 17px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .block-collapsible_top {
-    display: block;
+    flex-wrap: wrap;
   }
 }
-.block-collapsible_top button {
-  width: 45%;
+.block-collapsible_top-btn {
+  width: 33%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -735,63 +804,98 @@ main {
   flex-wrap: nowrap;
 }
 @media (max-width: 767px) {
-  .block-collapsible_top button {
+  .block-collapsible_top-btn {
     width: 100%;
     margin-bottom: 15px;
   }
 }
-.block-collapsible_top button img {
+.block-collapsible_top-btn img {
   width: 32px;
   height: 32px;
   margin-right: 10px;
   transform: rotate(0deg);
   transition: transform 250ms ease-in;
 }
-.block-collapsible_top button h5 {
+.block-collapsible_top-btn h5 {
   text-align: left;
 }
 .block-collapsible_top ul {
-  width: 55%;
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
 }
-@media (max-width: 1199px) {
-  .block-collapsible_top ul {
-    flex-wrap: wrap;
-    width: 50%;
-  }
-}
 @media (max-width: 767px) {
   .block-collapsible_top ul {
     width: 100%;
   }
 }
+@media (max-width: 575px) {
+  .block-collapsible_top ul {
+    flex-wrap: wrap;
+    gap: 15px 0px;
+    position: relative;
+  }
+  .block-collapsible_top ul::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: var(--font-color);
+  }
+}
 .block-collapsible_top ul li {
+  width: 25%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
 }
-@media (max-width: 1199px) {
-  .block-collapsible_top ul li {
-    width: 50%;
-  }
-}
 .block-collapsible_top ul li img {
   width: 32px;
   height: 32px;
-  margin-right: 10px;
+  margin-bottom: 5px;
 }
 .block-collapsible_top ul li:not(:first-child) {
-  margin-left: 40px;
+  position: relative;
+}
+.block-collapsible_top ul li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background-color: var(--font-color);
 }
 @media (max-width: 1199px) {
   .block-collapsible_top ul li:not(:first-child) {
     margin-left: 0px;
+  }
+}
+@media (max-width: 575px) {
+  .block-collapsible_top ul li {
+    width: 50%;
+  }
+  .block-collapsible_top ul li:nth-child(3)::before {
+    content: unset;
+  }
+}
+.block-collapsible_top .btn-1 {
+  padding: 1em 2em;
+  width: auto;
+  margin-left: 1.75em;
+}
+@media (max-width: 1199px) {
+  .block-collapsible_top .btn-1 {
+    width: 100%;
+    margin-left: 0em;
+    margin-top: 1.5em;
   }
 }
 .block-collapsible_body {
@@ -816,10 +920,16 @@ main {
   margin-bottom: 20px;
 }
 .block-collapsible.active .block-collapsible_top button img {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 .block-collapsible.active .block-collapsible_body {
   display: block;
+}
+.block-collapsible.no-description .block-collapsible_top-btn {
+  pointer-events: none;
+}
+.block-collapsible.no-description .block-collapsible_top-btn img {
+  opacity: 0;
 }
 
 .sec-callback {
