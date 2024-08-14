@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  --h-height: 95px;
+  --h-height: 144px;
   --h-nav: 60px;
   --h-footer: 100px;
   --main-color: #323555;
@@ -11,12 +11,12 @@
 }
 @media (max-width: 991px) {
   :root {
-    --h-height: 180px;
+    --h-height: 200px;
   }
 }
 @media (max-width: 767px) {
   :root {
-    --h-height: 300px;
+    --h-height: 340px;
   }
 }
 
@@ -231,22 +231,80 @@ header {
   height: var(--h-height);
   color: var(--main-color);
   padding: 15px 0px;
+  display: grid;
+  grid-template-columns: 5fr 2fr 3fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "logoGroup contacts btns" "logoGroup contacts address";
+  gap: 0.5em 1em;
 }
-header .logo {
-  width: 44px;
+@media (max-width: 1199.98px) {
+  header {
+    font-size: 0.9em;
+  }
 }
-header h5 {
+@media (max-width: 991.98px) {
+  header {
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logoGroup address" "logoGroup contacts" "btns contacts";
+    gap: 0.5em 3em;
+    font-size: 1em;
+  }
+}
+@media (max-width: 767.98px) {
+  header {
+    grid-template-columns: 1fr;
+    grid-template-areas: "logoGroup" "address" "contacts" "btns";
+  }
+}
+header .logoGroup {
+  grid-area: logoGroup;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+header .logoGroup .logo {
+  width: 78px;
+}
+@media (max-width: 767.98px) {
+  header .logoGroup .logo {
+    width: 44px;
+  }
+}
+header .logoGroup h5 {
+  color: var(--main-color);
   font-weight: 700;
+  font-size: 2.25em;
   margin-bottom: 12px;
-  line-height: 130%;
+  line-height: 120%;
   text-align: left;
 }
-header h6 {
-  font-size: 16px;
+@media (max-width: 1399.98px) {
+  header .logoGroup h5 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 767.98px) {
+  header .logoGroup h5 {
+    font-size: 1.5em;
+    margin-bottom: 6px;
+  }
+}
+header .logoGroup h6 {
+  color: var(--main-color);
+  font-size: 1.25em;
   font-weight: 300;
   line-height: 100%;
 }
-header ul {
+@media (max-width: 767.98px) {
+  header .logoGroup h6 {
+    font-size: 1.15em;
+  }
+}
+header .contacts {
+  grid-area: contacts;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -254,64 +312,62 @@ header ul {
   flex-wrap: nowrap;
 }
 @media (max-width: 991px) {
-  header ul {
+  header .contacts {
     justify-content: flex-start;
-    width: 35%;
+    gap: 0.5em;
   }
 }
-@media (max-width: 799px) {
-  header ul {
-    width: 40%;
-  }
-}
-@media (max-width: 767px) {
-  header ul {
-    width: 100%;
-  }
-}
-header ul li {
+header .contacts li {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
 }
-header ul li img {
+header .contacts li img {
   width: 30px;
   height: 30px;
   margin-right: 4px;
 }
-@media (max-width: 991px) {
-  header ul li {
-    margin-bottom: 5px;
-  }
+header .address {
+  grid-area: address;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+header .address span {
+  line-height: 120%;
+}
+header .btns {
+  grid-area: btns;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 @media (max-width: 1199px) {
-  header .btn-1 {
-    padding: 1.5rem 1rem;
+  header .btns .btn-1 {
+    padding: 1em;
   }
 }
 @media (max-width: 991px) {
-  header .btn-1 {
+  header .btns .btn-1 {
     width: 100%;
     flex: 1;
-    padding: 1rem;
   }
 }
-header .btn-3 {
-  height: 65px;
+@media (max-width: 575px) {
+  header .btns .btn-1 {
+    padding: 0.5em;
+  }
+}
+header .btns .btn-3 {
+  height: auto;
   width: 65px;
   padding: 0.5rem;
-}
-@media (max-width: 991px) {
-  header > div {
-    width: 47%;
-  }
-}
-@media (max-width: 767px) {
-  header > div {
-    width: 100%;
-  }
 }
 
 nav {
@@ -331,10 +387,10 @@ nav ul {
   justify-content: center;
   align-items: stretch;
   flex-wrap: nowrap;
-  padding: 15px 0px;
+  padding: 7px 0px;
 }
 nav ul li {
-  padding: 0 2.5em;
+  padding: 0 0.65em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -344,14 +400,29 @@ nav ul li {
 nav ul li:not(:first-child) {
   border-left: 1px solid #fff;
 }
-@media (max-width: 991px) {
-  nav ul li {
-    padding: 0 2em;
-  }
-}
 nav ul a {
   display: block;
   color: #fff;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0.5em 2.5em;
+  height: 100%;
+  border-radius: 3px;
+  transition: 250ms ease-in;
+  transition-property: color, background-color;
+}
+nav ul a:hover, nav ul a:focus, nav ul a:active, nav ul a.active {
+  background-color: #fff;
+  color: var(--main-color);
+}
+@media (max-width: 991px) {
+  nav ul a {
+    padding: 0.5em 1.5em;
+  }
 }
 
 main {
@@ -491,10 +562,11 @@ main {
 }
 
 .sec-how {
-  background-image: url(../imgs/bg/bg-lines2.svg);
+  background-image: url(../imgs/bg/bg-lines2NEW.svg), url(../imgs/bg/bg-lines2NewBG.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 70%;
-  background-position: 50% 75%;
+  background-size: 100% 70%, cover;
+  background-position: 50% 75%, 50% 50%;
+  padding: var(--indent) 0px;
 }
 @media (max-width: 767px) {
   .sec-how {
@@ -800,6 +872,34 @@ main {
   font-weight: 700;
   text-align: left;
   margin-bottom: 20px;
+}
+
+.license {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid var(--font-color);
+}
+@media (max-width: 1199.98px) {
+  .license {
+    height: 400px;
+  }
+}
+@media (max-width: 991.98px) {
+  .license {
+    height: 500px;
+  }
+}
+@media (max-width: 767.98px) {
+  .license {
+    height: 350px;
+  }
+}
+@media (max-width: 575.98px) {
+  .license {
+    height: 120vw;
+  }
 }
 
 footer {

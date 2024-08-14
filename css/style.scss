@@ -2,7 +2,7 @@
 
 
 :root {
-    --h-height: 95px;
+    --h-height: 144px;
     --h-nav: 60px;
     --h-footer: 100px;
     --main-color: #323555;
@@ -11,10 +11,10 @@
     --indent: 70px;
     --indent-sm: 40px;
     @media (max-width:991px) {
-        --h-height: 180px;
+        --h-height: 200px;
     }
     @media (max-width: 767px) {
-        --h-height: 300px;
+        --h-height: 340px;
     }
 }
 
@@ -220,31 +220,74 @@ header {
     height: var(--h-height);
     color: var(--main-color);
     padding: 15px 0px;
-    .logo {
-        width: 44px;
+    display: grid;
+    grid-template-columns: 5fr 2fr 3fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "logoGroup contacts btns"
+    "logoGroup contacts address";
+    gap: 0.5em 1em;
+    @media (max-width:1199.98px) {
+        font-size: .9em;
     }
-    h5 {
-        font-weight: 700;
-        margin-bottom: 12px;
-        line-height: 130%;
-        text-align: left;
+
+    @media (max-width:991.98px) {
+        grid-template-columns: 6fr 4fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "logoGroup address"
+        "logoGroup contacts"
+        "btns contacts";
+        gap: 0.5em 3em;
+        font-size: 1em;
     }
-    h6 {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 100%;
+    @media (max-width:767.98px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "logoGroup"
+        "address"
+        "contacts"
+        "btns";
     }
-    ul {
+    
+    .logoGroup {
+        grid-area: logoGroup;
+        @include flex(row, flex-start, center, nowrap);
+        .logo {
+            width: 78px;
+            @media (max-width:767.98px) {
+                width: 44px;
+            }
+        }
+        h5 {
+            color: var(--main-color);
+            font-weight: 700;
+            font-size: 2.25em;
+            margin-bottom: 12px;
+            line-height: 120%;
+            text-align: left;
+            @media (max-width: 1399.98px) {
+                font-size: 2em;
+            }
+            @media (max-width:767.98px) {
+                font-size: 1.5em;
+                margin-bottom: 6px;
+            }
+        }
+        h6 {
+            color: var(--main-color);
+            font-size: 1.25em;
+            font-weight: 300;
+            line-height: 100%;
+            @media (max-width:767.98px) {
+                font-size: 1.15em;
+            }
+        }
+    }
+
+    .contacts {
+        grid-area: contacts;
         @include flex(column, space-between, flex-start, nowrap);
-        @media (max-width: 991px) {
+        @media (max-width:991px) {
             justify-content: flex-start;
-            width: 35%;
-        }
-        @media (max-width: 799px) {
-            width: 40%;
-        }
-        @media (max-width: 767px) {
-            width: 100%;
+            gap: 0.5em;
         }
         li {
             @include flex(row, flex-start, center, nowrap);
@@ -253,32 +296,36 @@ header {
                 height: 30px;
                 margin-right: 4px;
             }
-            @media (max-width: 991px) { 
-                margin-bottom: 5px;
+        }
+    }
+
+    .address {
+        grid-area: address;
+        @include flex(row, flex-start, center, nowrap);
+        span {
+            line-height: 120%;
+        }
+    }
+
+    .btns {
+        grid-area: btns;
+        @include flex(row, space-between, stretch, nowrap);
+        .btn-1 {
+            @media (max-width: 1199px) {
+                padding: 1em;
+            }
+            @media (max-width: 991px) {
+                width: 100%;
+                flex: 1;
+            }
+            @media (max-width: 575px) {
+                padding: .5em;
             }
         }
-    }
-    .btn-1 {
-        @media (max-width: 1199px) {
-            padding: 1.5rem 1rem;
-        }
-        @media (max-width: 991px) {
-            width: 100%;
-            flex: 1;
-            padding: 1rem;
-        }
-    }
-    .btn-3 {
-        height: 65px;
-        width: 65px;
-        padding: .5rem;
-    }
-    &>div {
-        @media (max-width: 991px) {
-            width: 47%;
-        }
-        @media (max-width: 767px) {
-            width: 100%;
+        .btn-3 {
+            height: auto;
+            width: 65px;
+            padding: .5rem;
         }
     }
 }
@@ -293,20 +340,32 @@ nav {
     ul {
         height: 100%;
         @include flex(row, center, stretch, nowrap);
-        padding: 15px 0px;
+        padding: 7px 0px;
         li {
-            padding: 0 2.5em;
+            padding: 0 0.65em;
             @include flex(row, center, center, nowrap);
             &:not(:first-child) {
                 border-left: 1px solid #fff;
-            }
-            @media (max-width: 991px) {
-                padding: 0 2em;
             }
         }
         a {
             display: block;
             color: #fff;
+            background-color: transparent;
+            @include flex();
+            padding: .5em 2.5em;
+            height: 100%;
+            border-radius: 3px;
+            transition: 250ms ease-in;
+            transition-property: color, background-color;
+            &:hover, &:focus, &:active, &.active {
+                background-color: #fff;
+                color: var(--main-color);
+            }
+
+            @media (max-width: 991px) {
+                padding: .5em 1.5em;
+            }
         }
     }
 }
@@ -427,10 +486,11 @@ main {
 }
 
 .sec-how {
-    background-image: url(../imgs/bg/bg-lines2.svg);
+    background-image: url(../imgs/bg/bg-lines2NEW.svg), url(../imgs/bg/bg-lines2NewBG.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 70%;
-    background-position: 50% 75%;
+    background-size: 100% 70%, cover;
+    background-position: 50% 75%, 50% 50%;
+    padding: var(--indent) 0px;
     @media (max-width: 767px) {
         background: none;
     }
@@ -672,6 +732,26 @@ main {
         margin-bottom: 20px;
     }
 }
+
+.license {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 2px solid var(--font-color);
+    @media (max-width: 1199.98px) {
+        height: 400px;
+    }
+    @media (max-width: 991.98px) {
+        height: 500px;
+    }
+    @media (max-width: 767.98px) {
+        height: 350px;
+    }
+    @media (max-width: 575.98px) {
+        height: 120vw;
+    }
+}
+
 footer {
     padding: var(--indent) 0px;
     background-color: var(--main-color);

@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.min.css"/>
 </head>
 <body>
-    <header class="container d-flex justify-content-between align-items-stretch flex-wrap flex-lg-nowrap">
-        <div class="d-flex align-items-center order-1 mb-2 mb-lg-0">
+    <header class="container">
+        <div class="logoGroup">
             <a href="index.html">
                 <img src="imgs/logo-lg.jpg" alt="ПрофРост" class="logo">
             </a>
@@ -20,10 +20,14 @@
             </div>
         </div>
 
-        <ul class="order-2">
+        <ul class="contacts">
             <li>
-                <img src="imgs/icons/map.svg" alt="map">
-                <address>Воронеж, Лидии Рябцевой 54</address>
+                <img src="imgs/icons/phone.svg" alt="phone">
+                <a href="tel:+74732627969">+7 (473) 262-79-69</a>
+            </li>
+            <li>
+                <img src="imgs/icons/whatsapp.svg" alt="WhatsApp ">
+                <a href="tel:+74732627969">WhatsApp</a>
             </li>
             <li>
                 <img src="imgs/icons/message.svg" alt="message">
@@ -31,24 +35,17 @@
             </li>
         </ul>
 
-        <ul class="order-3 order-md-4 order-lg-3">
-            <li>
-                <img src="imgs/icons/phone.svg" alt="phone">
-                <a href="tel:+79911122111">+7 (991) 112-21-11</a>
-            </li>
-            <li>
-                <img src="imgs/icons/phone.svg" alt="phone">
-                <a href="tel:+74732627969">+7 (473) 262-79-69</a>
-            </li>
-        </ul>
+        <address class="address">
+            <img src="imgs/icons/map.svg" alt="map">
+            <span class="ms-1">г. Воронеж, ул. Лидии Рябцевой, д. 54, 2 этаж, каб. 203 </span>
+        </address>
 
-        <div class="d-flex order-4 order-md-3 order-lg-4">
-            <button type="button" class="btn-1 fs-18">Войти в систему</button>
-            <button onclick="openModal('menuModal')" class="ms-4 btn-3 d-md-none" type="button">
+        <div class="btns">
+            <button type="button" class="btn-1 fs-18 w-100">Войти в систему обучения</button>
+            <button onclick="openModal('menuModal')" class="ms-3 btn-3 d-md-none" type="button">
                 <img src="imgs/icons/menu.svg" alt="menu">
             </button>
         </div>
-
     </header>
     
     <nav>
